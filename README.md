@@ -2,10 +2,10 @@
 a raspberry pi project to capture readings from a power meter
 
 This is how it looks:
-![powerpi in its natural habitat](https://github.com/philippkrauss/powerpi/blob/master/docs/powerpi.jpg?raw=true)
+![powerpi in its natural habitat](https://raw.githubusercontent.com/philippkrauss/powerpi/main/docs/powerpi.jpg)
 
 And this is what it produces:
-![powerpi example output](https://github.com/philippkrauss/powerpi/blob/master/docs/output.jpg?raw=true)
+![powerpi example output](https://raw.githubusercontent.com/philippkrauss/powerpi/main/docs/output.jpg)
 
 ## BOM
 
