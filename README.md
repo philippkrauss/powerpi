@@ -1,7 +1,11 @@
 # powerpi
 a raspberry pi project to capture readings from a power meter
 
-![powerpi in its natural habitat](https://github.com/philippkrauss/powerpi/blob/master/docs/powerpi.jpg)
+This is how it looks:
+![powerpi in its natural habitat](https://github.com/philippkrauss/powerpi/blob/master/docs/powerpi.jpg?raw=true)
+
+And this is what it produces:
+![powerpi example output](https://github.com/philippkrauss/powerpi/blob/master/docs/output.jpg?raw=true)
 
 ## BOM
 
