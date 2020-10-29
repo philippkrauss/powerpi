@@ -18,7 +18,7 @@ I assume that the price of at least some of the components would have been much 
 * Raspberry Pi case (5,34 €)
 * Micro SD 16 GB (7,70 €) - I ordered this one but actuall received a 32GB SD card...
 * AZDelivery 5V RGB LED Ring WS2812B 12-Bit 50mm Arduino (3 pieces, together for 7,99€)
-* DeLock cable USB > DC 5,5 x 2,1 mm (2,80 €)
+* Arduino Nano, USB cable and 3 Dupont wires (still had it lying around, 1-2 Euros at aliexpress)
 
 ## location
 
