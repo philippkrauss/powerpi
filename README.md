@@ -18,7 +18,7 @@ I assume that the price of at least some of the components would have been much 
 
 The location of the power meter has access to electric power, but no other infrastructure is available (especially no WLAN).
 It is also not located inside my house, but inside a locked room in a public building (the local church).
-The room has small window to the north, so it is very poorly lit.
+The room has a small window to the north, so it is very poorly lit.
 
 The powerpi is equipped with a camera module.
 The power meter itself is located inside a fuse box that has a transparent door.
@@ -75,19 +75,33 @@ The command to take a foto is `raspistill`.
 The camera needs to be enabled using `raspi-config` first, but after that, no surprises at all.
 
 I created a script located in `/scripts_powerpi` to take the foto and scheduled it to run at the top of every hour using crontab.
-For the beginning, the cron expression is `0 9,10,11,12,13,14,15,16 * * *`.
-Since I am relying on dailight, it makes no sense to take fotos at night.
+For the beginning, the cron expression is `0 * * * *`.
 
 Foto size is about 200k at a resolution of 640*480, which seems like a reasonable size when buffering it for 2-3 weeks.
 
 ### poor lighting
 
-Since the powerpi is relying on daylight coming through a north-facing window, I do not expect to get too many good fotos at all.
-In fact I am not yet sure that I will get any at all.
-Therefore, I bought an LED ring with 12 LEDs which I plan to add around the camera.
+Since the powerpi is relying on daylight coming through a north-facing window, I did not expect to get too many good fotos at all.
+In fact, during the first few days, none was usable.
+Therefore, I bought an LED ring with 12 LEDs which I glued below the camera.
 
 It should be possible to use GPIO to switch the LED ring on right before taking the foto and switch it off again afterwards.
 I found a blog describing how to do it: http://frederickvandenbosch.be/?p=1014
+
+Unfortunately, I was not able to get this running.
+The LED ring reacted completely random, if at all.
+I suspect the 3.3V logic level of the raspberry pi to be the reason, but it might just be my incopetence - I will give it a try again at a later point in time.
+
+For now, I found an alternative solution that worked right out of the box.
+I used an Arduino Nano (I have plenty of those lying around, they cost around 1-2 Dollars at aliexpress) to drive the LED ring.
+To switch it on and off, I wrote a small Arduino program that reads an input pin and switches the LEDs on if the PIN gets pulled LOW.
+To install pigpio, I used the commands `sudo apt-get install pigpio`, `sudo systemctl start pigpiod` and `sudo systemctl enable pigpiod`.
+I use PIN GPIO17 to connect the Arduino.
+Now, the pin can be controlled using the following commands
+
+* `pigs modes 17 w` sets the PIN to write mode and pulls it low initially
+* `pigs w 17 1` sets the PIN to high
+* `pigs w 17 0` sets the PIN to low
 
 ### OCR
 
