@@ -1,6 +1,8 @@
 # powerpi
 a raspberry pi project to capture readings from a power meter
 
+![powerpi in its natural habitat](https://github.com/philippkrauss/powerpi/blob/master/docs/powerpi.jpg)
+
 ## BOM
 
 Since I did not have time to wait 6 weeks for delivery from China, I sourced the parts from german suppliers.
